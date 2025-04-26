@@ -1,84 +1,119 @@
-# 🖼️ Image Processing and Classification App
+# 🖼️ RGB Image Processing and K-Nearest Neighbors Classification System
 
-This project implements a simple image processing application with object-oriented design principles (classes, inheritance, and exception handling). It processes RGB images, builds a customizable image editing system, and uses a K-Nearest Neighbors (KNN) classifier to predict image labels.
-
----
-
-## 📦 Project Structure
-
-- `project.py` — Core functionality (image processing classes and methods)
-- `image_viewer.py` — Utility for viewing processed images
-- `img/` — Folder with input and expected output images
-- `knn_data/` — Sample labeled images for classification tasks
+This project implements an extensible image processing framework using object-oriented programming (OOP), and a basic machine learning image classification system. It focuses on handling low-level image representations, applying transformation pipelines, managing images through inheritance, and using a distance-based supervised learning algorithm for classification.
 
 ---
 
-## ✨ Core Features
+## 📦 Repository Structure
+
+- `project.py` — Core source code (image processing and KNN classifier classes)
+- `image_viewer.py` — Visualization utility to preview processed images
+- `img/` — Sample input and expected output images
+- `knn_data/` — Training datasets for KNN model experiments
+
+---
+
+## ✨ Core Modules and Functionalities
 
 ### RGBImage Class
-Handles the basic structure and validation of RGB images:
-- **Constructor** to initialize image data and dimensions
-- **Getter/Setter methods** to retrieve or modify pixels
-- **Deep copying** to safely duplicate images
-- **Validation and exception handling** for input types and values
+Defines the fundamental RGB image object using nested lists:
+- Initializes 3D matrices representing pixels in `(row, column, [R,G,B])` format.
+- Enforces strict type and shape validation with runtime exception handling.
+- Supports controlled access to image data through getters/setters.
+- Implements deep copying to maintain image immutability across transformations.
 
-_Example: (Insert image showing raw RGB image structure)_
+_Example:_  
+*(Insert visual showing RGB matrix structure and pixel values)*
 
 ---
 
 ### ImageProcessingTemplate Class
-Implements basic image processing operations:
-- **Negate**: Invert colors to create a photo negative
+Provides a library of stateless, computationally efficient image transformations:
 
-  
-  ![ezgif com-animated-gif-maker](https://github.com/user-attachments/assets/7af611b6-5211-4b28-ad58-7b62d42516a6)
----
-- **Grayscale**: Convert images to grayscale by averaging RGB channels
-- **Rotate 180°**: Rotate an image upside down
-- **Get Average Brightness**: Calculate mean pixel brightness
-- **Adjust Brightness**: Increase or decrease overall brightness
-- **Blur**: Smooth images by averaging pixel neighborhoods
+- **Negate**: Invert pixel intensities (`255 - intensity`) across all color channels.
 
+_Example:_  
 
+![ezgif com-animated-gif-maker](https://github.com/user-attachments/assets/5003de94-ac7d-4caa-adf9-d3d1dc61be02)
+
+- **Grayscale**: Average RGB channels per pixel using floor division.
+
+_Example:_  
+*(Insert before/after image showing grayscale transformation)*
+
+- **Rotate 180°**: Flip the image along both horizontal and vertical axes.
+
+_Example:_  
+*(Insert image showing original and rotated 180° version)*
+
+- **Get Average Brightness**: Calculate mean brightness value across all pixels.
+
+_Example:_  
+*(Insert brightness heatmap or show brightness comparison value)*
+
+- **Adjust Brightness**: Add/subtract uniform intensity with clipping at `[0, 255]`.
+
+_Example:_  
+*(Insert side-by-side images: darkened version, brightened version)*
+
+- **Blur**: Smooth image using local neighborhood averaging.
+
+_Example:_  
+*(Insert before/after images showing blurring effect)*
 
 ---
 
 ### StandardImageProcessing Class
-A basic monetization version of the template:
-- Inherits from `ImageProcessingTemplate`
-- Adds **cost tracking** for each processing operation
-- **Coupon system** to redeem free edits
+Extends `ImageProcessingTemplate` with minor usage tracking:
+- Inherits all transformation operations.
+- Tracks the number of processing operations performed.
+- Provides a coupon system to allow free operations temporarily.
 
-_Example: (Insert image showing cost tracking in action)_
+Uses method overriding and `super()` to extend base functionality cleanly.
+
+_Example:_  
+*(Insert visual showing sequence of transformations applied on an image)*
 
 ---
 
 ### PremiumImageProcessing Class
-A premium app version with extra features:
-- Fixed upfront **membership cost**
-- **Tile**: Repeat an image to fill larger dimensions
-- **Sticker**: Overlay an image onto another at specified coordinates
-- **Edge Highlight**: Perform edge detection using convolution with a kernel
+Extends the base functionality with additional advanced image manipulation operations:
 
-_Example: (Insert image showing tiling, stickers, and edge highlighting)_
+- **Tile**: Repeats an image to fill larger dimensions using modular indexing.
+
+_Example:_  
+*(Insert image showing a smaller image tiled across a larger canvas)*
+
+- **Sticker**: Overlays a smaller image onto a background at a specified (x, y) coordinate.
+
+_Example:_  
+*(Insert image showing sticker placement on a background image)*
+
+- **Edge Highlight**: Applies a 3x3 Laplacian convolution filter to detect and highlight edges.
+
+_Example:_  
+*(Insert image showing edge-highlighted output using Laplacian filter)*
 
 ---
 
 ### ImageKNNClassifier Class
-Implements a simple K-Nearest Neighbors classifier for images:
-- **Fit**: Load labeled training images
-- **Distance**: Compute Euclidean distance between images
-- **Vote**: Determine most common label among nearest neighbors
-- **Predict**: Classify new images based on training data
+Implements a simple instance-based supervised learning algorithm for image classification:
+- **fit()**: Stores (image, label) training data pairs.
+- **distance()**: Computes flattened pixel-wise Euclidean distance between two images.
+- **vote()**: Determines the most common label among nearest neighbors.
+- **predict()**: Predicts the label for new images based on `k` nearest training examples.
 
-_Example: (Insert diagram showing KNN neighbor selection and prediction)_
+Uses purely manual distance calculation and list operations for classification logic.
+
+_Example:_  
+*(Insert diagram showing a test image and its k-nearest neighbors with majority voting)*
 
 ---
 
-## 🚀 Running the Project
+## 🚀 How to Run
 
 ### Setup
-Install required packages:
+Install required packages for testing utilities:
 
 ```bash
 pip install numpy Pillow
