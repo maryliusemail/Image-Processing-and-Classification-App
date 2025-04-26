@@ -45,7 +45,8 @@ _Example:_
 - **Rotate 180°**: Flip the image along both horizontal and vertical axes.
 
 _Example:_  
-*(Insert image showing original and rotated 180° version)*
+![ezgif com-animated-gif-maker (4)](https://github.com/user-attachments/assets/c6058491-32cb-432f-81a3-cc54c740b2a4)
+
 
 - **Get Average Brightness**: Calculate mean brightness value across all pixels.
 
