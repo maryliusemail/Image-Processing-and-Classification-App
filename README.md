@@ -45,7 +45,8 @@ _Example:_
 - **Rotate 180°**: Flip the image along both horizontal and vertical axes.
 
 _Example:_  
-![ezgif com-animated-gif-maker (4)](https://github.com/user-attachments/assets/c6058491-32cb-432f-81a3-cc54c740b2a4)
+![ezgif com-animated-gif-maker (5)](https://github.com/user-attachments/assets/623618e6-1b3f-4093-b6a7-adef07021e63)
+
 
 
 - **Adjust Brightness**: Add/subtract uniform intensity with clipping at `[0, 255]`.
