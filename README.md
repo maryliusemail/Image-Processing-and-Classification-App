@@ -59,7 +59,8 @@ _Example:_
 - **Blur**: Smooth image using local neighborhood averaging.
 
 _Example:_  
-![ezgif com-animated-gif-maker (2)](https://github.com/user-attachments/assets/1810102e-0cc8-4c73-a5a3-faf89407f035)
+![ezgif com-animated-gif-maker (3)](https://github.com/user-attachments/assets/5f060c91-2a51-448d-9403-6da417032321)
+
 
 
 ---
