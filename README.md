@@ -59,7 +59,8 @@ _Example:_
 - **Blur**: Smooth image using local neighborhood averaging.
 
 _Example:_  
-*(Insert before/after images showing blurring effect)*
+![ezgif com-animated-gif-maker (2)](https://github.com/user-attachments/assets/1810102e-0cc8-4c73-a5a3-faf89407f035)
+
 
 ---
 
@@ -87,7 +88,8 @@ _Example:_
 - **Sticker**: Overlays a smaller image onto a background at a specified (x, y) coordinate.
 
 _Example:_  
-*(Insert image showing sticker placement on a background image)*
+![ezgif com-animated-gif-maker (1)](https://github.com/user-attachments/assets/b1c271e4-f3b9-468d-b1cb-a9fb19c879a3)
+
 
 - **Edge Highlight**: Applies a 3x3 Laplacian convolution filter to detect and highlight edges.
 
