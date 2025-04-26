@@ -39,7 +39,8 @@ _Example:_
 - **Grayscale**: Average RGB channels per pixel using floor division.
 
 _Example:_  
-*(Insert before/after image showing grayscale transformation)*
+![ezgif com-crop](https://github.com/user-attachments/assets/5cf32b05-fbe5-4b72-8504-5dd6a4ae32c4)
+
 
 - **Rotate 180°**: Flip the image along both horizontal and vertical axes.
 
