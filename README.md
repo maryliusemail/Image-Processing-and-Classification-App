@@ -48,15 +48,11 @@ _Example:_
 ![ezgif com-animated-gif-maker (4)](https://github.com/user-attachments/assets/c6058491-32cb-432f-81a3-cc54c740b2a4)
 
 
-- **Get Average Brightness**: Calculate mean brightness value across all pixels.
-
-_Example:_  
-*(Insert brightness heatmap or show brightness comparison value)*
-
 - **Adjust Brightness**: Add/subtract uniform intensity with clipping at `[0, 255]`.
 
 _Example:_  
-*(Insert side-by-side images: darkened version, brightened version)*
+![ezgif com-resize](https://github.com/user-attachments/assets/e23acb5a-3278-45bd-9e39-8379ad4c433b)
+
 
 - **Blur**: Smooth image using local neighborhood averaging.
 
