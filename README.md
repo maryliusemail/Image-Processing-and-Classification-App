@@ -29,6 +29,8 @@ _Example: (Insert image showing raw RGB image structure)_
 ### ImageProcessingTemplate Class
 Implements basic image processing operations:
 - **Negate**: Invert colors to create a photo negative
+
+  
   ![ezgif com-animated-gif-maker](https://github.com/user-attachments/assets/7af611b6-5211-4b28-ad58-7b62d42516a6)
 ---
 - **Grayscale**: Convert images to grayscale by averaging RGB channels
