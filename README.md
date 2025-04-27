@@ -222,7 +222,6 @@ knn.distance(img1, img2)
 
 
 _Example:_  
-image:
 ![knn_test_img](https://github.com/user-attachments/assets/1b3183e6-5e11-48db-9c0d-c0e6190404f2)
 
 ```python
