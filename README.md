@@ -95,23 +95,57 @@ _Example:_
 ---
 
 ### ImageKNNClassifier Class
-Implements a simple instance-based supervised learning algorithm for image classification:
-- **fit()**: Stores (image, label) training data pairs.
-- **distance()**: Computes flattened pixel-wise Euclidean distance between two images.
-- **vote()**: Determines the most common label among nearest neighbors.
-- **predict()**: Predicts the label for new images based on `k` nearest training examples.
+Implements a basic instance-based learning model for image classification based on nearest neighbor search.
 
-Uses purely manual distance calculation and list operations for classification logic.
+- **fit(data)**:  
+  Stores labeled training data into the classifier for future use.  
+  - Input: List of `(image, label)` tuples where each image is an `RGBImage` object and label is a string.
+  - Behavior: Saves the training dataset internally.  
+  - Exception Handling: Raises `ValueError` if the number of training samples is fewer than `k_neighbors`.
 
 _Example:_  
-*(Insert diagram showing a test image and its k-nearest neighbors with majority voting)*
+*(Insert visual showing example training dataset)*
 
 ---
 
-## 🚀 How to Run
+- **distance(image1, image2)**:  
+  Computes the **Euclidean distance** between two `RGBImage` instances.  
+  - Each image is flattened into a 1D array.
+  - Distance is calculated as the square root of the sum of squared differences across all pixel channels:
+    \[
+    d(a, b) = \sqrt{\sum_{i=1}^n (a_i - b_i)^2}
+    \]
+  - Strict validation ensures that both images have the same dimensions and are valid `RGBImage` objects.  
+  - Exception Handling: Raises `TypeError` if inputs are not `RGBImage` instances; raises `ValueError` if dimensions differ.
 
-### Setup
-Install required packages for testing utilities:
+_Example:_  
+*(Insert diagram showing two images and their computed distance)*
 
-```bash
-pip install numpy Pillow
+---
+
+- **vote(candidates)**:  
+  Determines the most common label from a list of candidate labels.  
+  - Input: List of labels (strings) corresponding to the nearest neighbors.
+  - Output: The label with the highest frequency among candidates.
+  - Tie-breaking: In the event of a tie, any majority label may be returned (implementation-dependent).
+
+_Example:_  
+*(Insert diagram showing candidate neighbor labels and selected majority label)*
+
+---
+
+- **predict(image)**:  
+  Predicts the label of a new `RGBImage` by finding its `k_neighbors` nearest training examples.
+  - For a given test image:
+    1. Computes distance to all stored training images.
+    2. Sorts training data by ascending distance.
+    3. Selects the top `k_neighbors`.
+    4. Applies the `vote()` function to determine the most common label among neighbors.
+  - Exception Handling: Raises `ValueError` if `fit()` has not been called prior to prediction.
+
+_Example:_  
+*(Insert diagram showing a new image surrounded by its 3/5/7 nearest neighbors and final predicted label)*
+
+---
+
+
