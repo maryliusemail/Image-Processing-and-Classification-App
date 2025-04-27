@@ -22,8 +22,6 @@ Defines the fundamental RGB image object using nested lists:
 - Supports controlled access to image data through getters/setters.
 - Implements deep copying to maintain image immutability across transformations.
 
-_Example:_  
-*(Insert visual showing RGB matrix structure and pixel values)*
 
 ---
 
@@ -80,7 +78,8 @@ Extends the base functionality with additional advanced image manipulation opera
 - **Tile**: Repeats an image to fill larger dimensions using modular indexing.
 
 _Example:_  
-*(Insert image showing a smaller image tiled across a larger canvas)*
+![ezgif com-animated-gif-maker (7)](https://github.com/user-attachments/assets/3e5ad8d7-cd87-453d-80e8-eaab2044a559)
+
 
 - **Sticker**: Overlays a smaller image onto a background at a specified (x, y) coordinate.
 
