@@ -230,6 +230,8 @@ knn_tests('img/knn_test_img.png')
 ```
 - Output: nighttime
 
+- ✅ **Result**: The model correctly predicted the image as nighttime!
+
 
 
 ---
