@@ -103,8 +103,6 @@ Implements a basic instance-based learning model for image classification based 
   - Behavior: Saves the training dataset internally.  
   - Exception Handling: Raises `ValueError` if the number of training samples is fewer than `k_neighbors`.
 
-_Example:_  
-*(Insert visual showing example training dataset)*
 
 ---
 
@@ -118,9 +116,20 @@ _Example:_
   - Strict validation ensures that both images have the same dimensions and are valid `RGBImage` objects.  
   - Exception Handling: Raises `TypeError` if inputs are not `RGBImage` instances; raises `ValueError` if dimensions differ.
 
-_Example:_  
-*(Insert diagram showing two images and their computed distance)*
+_Image 1:_  
+![steve](https://github.com/user-attachments/assets/adafec77-93c3-47c0-a937-837a1d8b9503)
 
+_Image 2:_  
+![knn_test_img](https://github.com/user-attachments/assets/64814854-c958-4145-ab78-c28fd05bbc79)
+
+
+```python
+img1 = img_read_helper('img/steve.png')
+img2 = img_read_helper('img/knn_test_img.png')
+knn = ImageKNNClassifier(3)
+knn.distance(img1, img2)
+```
+# Output: 15946.312896716909
 ---
 
 - **vote(candidates)**:  
