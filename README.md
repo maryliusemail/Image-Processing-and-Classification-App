@@ -212,6 +212,14 @@ knn.distance(img1, img2)
   3. Select the top `k_neighbors`.
   4. Apply `vote()` to predict the label based on the neighbors' labels.
 
+- **Training Data**:
+  - Training images are loaded from the `knn_data/` folder.
+  - Each image is labeled (e.g., `"daytime"`, `"nighttime"`) and used for nearest neighbor comparisons.
+
+
+---
+
+
 
 _Example:_  
 image:
