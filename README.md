@@ -107,14 +107,7 @@ Implements a basic instance-based learning model for image classification based 
 ---
 
 - **distance(image1, image2)**:  
-  Computes the **Euclidean distance** between two `RGBImage` instances.  
-  - Each image is flattened into a 1D array.
-  - Distance is calculated as the square root of the sum of squared differences across all pixel channels:
-    \[
-    d(a, b) = \sqrt{\sum_{i=1}^n (a_i - b_i)^2}
-    \]
-  - Strict validation ensures that both images have the same dimensions and are valid `RGBImage` objects.  
-  - Exception Handling: Raises `TypeError` if inputs are not `RGBImage` instances; raises `ValueError` if dimensions differ.
+ Measures how similar two `RGBImage` instances are by calculating the **Euclidean distance** between them. 
 
 _Image 1:_  
 ![steve](https://github.com/user-attachments/assets/adafec77-93c3-47c0-a937-837a1d8b9503)
@@ -129,7 +122,7 @@ img2 = img_read_helper('img/knn_test_img.png')
 knn = ImageKNNClassifier(3)
 knn.distance(img1, img2)
 ```
-# Output: 15946.312896716909
+- Output: 15946.312896716909
 ---
 
 - **vote(candidates)**:  
