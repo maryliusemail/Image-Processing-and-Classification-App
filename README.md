@@ -4,12 +4,41 @@ This project implements an extensible image processing framework using object-or
 
 ---
 
-## 📦 Repository Structure
+## 🚀 How to Run the Project
 
-- `project.py` — Core source code (image processing and KNN classifier classes)
-- `image_viewer.py` — Visualization utility to preview processed images
-- `img/` — Sample input and expected output images
-- `knn_data/` — Training datasets for KNN model experiments
+### 1. Download the Project Files
+Download or clone the full project folder, which includes:
+
+- `project.py` (core code)
+- `image_viewer.py` (image viewer tool)
+- `img/` folder with sample images
+- `img/out/` folder (output results will be saved here)
+
+Make sure the `out/` folder exists inside `img/` to store your processed images.
+
+---
+
+### 2. Install Required Python Packages
+
+If you don't already have the required libraries installed, run:
+
+```bash
+pip install numpy Pillow
+```
+
+### 3. Run and Save Results
+
+- Use the classes and functions in `project.py` to process images.
+- Save any outputs to `img/out/` for easier viewing.
+
+**Example to Test (on Terminal):**
+
+```python
+img_proc = ImageProcessingTemplate()
+img = img_read_helper('img/steve.png')
+img_blur = img_proc.blur(img)
+img_save_helper('img/out/test_image_32x32_blur.png', img_blur)
+```
 
 ---
 
