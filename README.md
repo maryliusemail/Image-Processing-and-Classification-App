@@ -170,9 +170,8 @@ This approach generalizes to **any kind of image classification** based on visua
   - Flatten each 3D RGB image matrix into a 1D list.
   - Compute the **Euclidean distance** between corresponding pixel intensities:
   
-    \[
-    d(a, b) = \sqrt{(a_1-b_1)^2 + (a_2-b_2)^2 + \dots + (a_n-b_n)^2}
-    \]
+    $$d(a, b) = \sqrt{(a_1-b_1)^2 + (a_2-b_2)^2 + \dots + (a_n-b_n)^2}$$
+
   
   - A **smaller distance** indicates higher similarity.
 
