@@ -131,8 +131,6 @@ knn.distance(img1, img2)
   - Output: The label with the highest frequency among candidates.
   - Tie-breaking: In the event of a tie, any majority label may be returned (implementation-dependent).
 
-_Example:_  
-*(Insert diagram showing candidate neighbor labels and selected majority label)*
 
 ---
 
@@ -146,7 +144,15 @@ _Example:_
   - Exception Handling: Raises `ValueError` if `fit()` has not been called prior to prediction.
 
 _Example:_  
-*(Insert diagram showing a new image surrounded by its 3/5/7 nearest neighbors and final predicted label)*
+image:
+![knn_test_img](https://github.com/user-attachments/assets/1b3183e6-5e11-48db-9c0d-c0e6190404f2)
+
+```python
+knn_tests('img/knn_test_img.png')
+```
+- Output: nighttime
+
+
 
 ---
 
