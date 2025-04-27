@@ -1,6 +1,10 @@
 # 🖼️ RGB Image Processing and K-Nearest Neighbors Classification System
 
-This project implements an extensible image processing framework using object-oriented programming (OOP), and a basic machine learning image classification system. It focuses on handling low-level image representations, applying transformation pipelines, managing images through inheritance, and using a distance-based supervised learning algorithm for classification.
+
+This project builds a basic image processing system and a simple machine learning classifier from scratch.  
+It allows you to apply common image transformations (like negation, grayscale, blur, and rotation) and classify images based on pixel similarity using the K-Nearest Neighbors (KNN) algorithm.
+
+
 
 ---
 
