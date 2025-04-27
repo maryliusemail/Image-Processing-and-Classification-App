@@ -33,8 +33,9 @@ Provides a library of stateless, computationally efficient image transformations
 - **Negate**: Invert pixel intensities (`255 - intensity`) across all color channels.
 
 _Example:_  
+![ezgif com-animated-gif-maker (6)](https://github.com/user-attachments/assets/2f9b3532-4384-4976-bd6e-47c04c745429)
 
-![ezgif com-animated-gif-maker](https://github.com/user-attachments/assets/5003de94-ac7d-4caa-adf9-d3d1dc61be02)
+
 
 - **Grayscale**: Average RGB channels per pixel using floor division.
 
@@ -94,7 +95,7 @@ _Example:_
 - **Edge Highlight**: Applies a 3x3 Laplacian convolution filter to detect and highlight edges.
 
 _Example:_  
-*(Insert image showing edge-highlighted output using Laplacian filter)*
+![ezgif com-animated-gif-maker](https://github.com/user-attachments/assets/5003de94-ac7d-4caa-adf9-d3d1dc61be02)
 
 ---
 
