@@ -123,20 +123,54 @@ _Example:_
 
 ---
 
-### ImageKNNClassifier Class
-Implements a basic instance-based learning model for image classification based on nearest neighbor search.
+## 🧠 Image KNN Classifier Overview
 
-### **fit(data)**:  
-  Stores labeled training data into the classifier for future use.  
-  - Input: List of `(image, label)` tuples where each image is an `RGBImage` object and label is a string.
-  - Behavior: Saves the training dataset internally.  
-  - Exception Handling: Raises `ValueError` if the number of training samples is fewer than `k_neighbors`.
+K-Nearest Neighbors (KNN) is a classic machine learning algorithm commonly used for **classification** tasks.  
+It works under the principle that similar data points exist close together in feature space.
+
+In this project, we apply KNN to classify images based on their raw pixel values.
+
+---
+
+### 🌞🌙 Real-World Example: Classifying Day vs Night Images
+
+This project follows a typical KNN workflow.  
+Imagine building a model to determine whether an image shows **daytime** or **nighttime**:
+
+1. **Collect a dataset**:
+   - Images labeled `"daytime"`
+   - Images labeled `"nighttime"`
+
+2. **Classify a new image**:
+   - Measure how **similar** the new image is to the labeled examples.
+   - Find the **k** closest images (nearest neighbors).
+   - **Vote** among them to predict the label.
+
+This approach generalizes to **any kind of image classification** based on visual similarity.
+
+
+## 🛠️ How the KNN Classifier Works in This Project
+
+### **Step 1: Fitting the Model — `fit(data)`**
+
+- **Purpose**: Save labeled training data (images and labels) for future use.
+- **Input**: List of `(image, label)` pairs.
 
 
 ---
 
-### **distance(image1, image2)**:  
- Measures how similar two `RGBImage` instances are by calculating the **Euclidean distance** between them. 
+### **Step 2: Measuring Distance — `distance(image1, image2)`**
+
+- **Purpose**: Quantify how visually similar two images are.
+- **Method**:
+  - Flatten each 3D RGB image matrix into a 1D list.
+  - Compute the **Euclidean distance** between corresponding pixel intensities:
+  
+    \[
+    d(a, b) = \sqrt{(a_1-b_1)^2 + (a_2-b_2)^2 + \dots + (a_n-b_n)^2}
+    \]
+  
+  - A **smaller distance** indicates higher similarity.
 
 _Image 1:_  
 ![steve](https://github.com/user-attachments/assets/adafec77-93c3-47c0-a937-837a1d8b9503)
@@ -154,23 +188,26 @@ knn.distance(img1, img2)
 - Output: 15946.312896716909
 ---
 
-### **vote(candidates)**:  
-  Determines the most common label from a list of candidate labels.  
-  - Input: List of labels (strings) corresponding to the nearest neighbors.
-  - Output: The label with the highest frequency among candidates.
-  - Tie-breaking: In the event of a tie, any majority label may be returned (implementation-dependent).
+### **Step 3: Voting — `vote(candidates)`**
+
+- **Purpose**: Choose the most common label among the nearest neighbors.
+- **Input**: A list of candidate labels (strings).
+- **Behavior**:
+  - Returns the most frequent label.
+  - If there’s a tie, any of the majority labels may be selected.
 
 
 ---
 
-### **predict(image)**:  
-  Predicts the label of a new `RGBImage` by finding its `k_neighbors` nearest training examples.
-  - For a given test image:
-    1. Computes distance to all stored training images.
-    2. Sorts training data by ascending distance.
-    3. Selects the top `k_neighbors`.
-    4. Applies the `vote()` function to determine the most common label among neighbors.
-  - Exception Handling: Raises `ValueError` if `fit()` has not been called prior to prediction.
+### **Step 4: Predicting — `predict(image)`**
+
+- **Purpose**: Predict the label of a new image using the KNN method.
+- **Workflow**:
+  1. Compute distances to all stored training images.
+  2. Sort the images by ascending distance.
+  3. Select the top `k_neighbors`.
+  4. Apply `vote()` to predict the label based on the neighbors' labels.
+
 
 _Example:_  
 image:
