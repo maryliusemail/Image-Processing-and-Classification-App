@@ -71,10 +71,6 @@ Extends `ImageProcessingTemplate` with minor usage tracking:
 - Tracks the number of processing operations performed.
 - Provides a coupon system to allow free operations temporarily.
 
-Uses method overriding and `super()` to extend base functionality cleanly.
-
-_Example:_  
-*(Insert visual showing sequence of transformations applied on an image)*
 
 ---
 
