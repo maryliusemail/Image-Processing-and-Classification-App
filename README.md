@@ -97,7 +97,7 @@ _Example:_
 ### ImageKNNClassifier Class
 Implements a basic instance-based learning model for image classification based on nearest neighbor search.
 
-# **fit(data)**:  
+### **fit(data)**:  
   Stores labeled training data into the classifier for future use.  
   - Input: List of `(image, label)` tuples where each image is an `RGBImage` object and label is a string.
   - Behavior: Saves the training dataset internally.  
@@ -106,7 +106,7 @@ Implements a basic instance-based learning model for image classification based 
 
 ---
 
-# **distance(image1, image2)**:  
+### **distance(image1, image2)**:  
  Measures how similar two `RGBImage` instances are by calculating the **Euclidean distance** between them. 
 
 _Image 1:_  
@@ -125,7 +125,7 @@ knn.distance(img1, img2)
 - Output: 15946.312896716909
 ---
 
-# **vote(candidates)**:  
+### **vote(candidates)**:  
   Determines the most common label from a list of candidate labels.  
   - Input: List of labels (strings) corresponding to the nearest neighbors.
   - Output: The label with the highest frequency among candidates.
@@ -136,7 +136,7 @@ _Example:_
 
 ---
 
-# **predict(image)**:  
+### **predict(image)**:  
   Predicts the label of a new `RGBImage` by finding its `k_neighbors` nearest training examples.
   - For a given test image:
     1. Computes distance to all stored training images.
